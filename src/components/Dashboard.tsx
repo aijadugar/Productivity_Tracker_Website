@@ -3,7 +3,7 @@ import { CheckCircle, Award, TrendingUp } from 'lucide-react';
 
 const Dashboard = () => {
   const stats = [
-    { label: 'Tasks Completed', value: '5/10', icon: <CheckCircle className="text-emerald-500" /> },
+    { label: 'Tasks Completed', value: '4/10', icon: <CheckCircle className="text-emerald-500" /> },
     { label: 'Current Streak', value: '3 days', icon: <Award className="text-amber-500" /> },
     { label: 'Productivity Score', value: '85%', icon: <TrendingUp className="text-blue-500" /> },
   ];

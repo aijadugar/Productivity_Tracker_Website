@@ -17,7 +17,7 @@ export const QuickLinks: React.FC = () => {
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-gray-600 hover:text-blue-500 flex items-center space-x-1 group"
+              className="text-gray-500 hover:text-gray-600 flex items-center space-x-1 group"
             >
               <span>{link.label}</span>
               <ExternalLink
