@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.focus-mode {
+  @apply bg-gray-50;
+}
+
+.focus-mode .non-essential {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.focus-mode .non-essential:hover {
+  opacity: 1;
+}
+
+.distraction-free .non-essential {
+  display: none;
+}
+
+.focus-mode .priority-task {
+  @apply ring-2 ring-purple-500 ring-opacity-50;
+}
