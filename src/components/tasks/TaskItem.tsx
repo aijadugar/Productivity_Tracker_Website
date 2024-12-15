@@ -55,3 +55,5 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onEdit, onToggle })
     </div>
   );
 };
+
+export default TaskItem;

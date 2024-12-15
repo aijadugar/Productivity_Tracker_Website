@@ -1,11 +1,11 @@
 export interface Task {
   id: string;
   title: string;
-  completed: boolean;
   priority: 'low' | 'medium' | 'high';
-  createdAt: Date;
-  deadline?: Date;
+  completed: boolean;
+  createdAt: Date; // Ensure this property exists in the type definition
 }
+
 
 export interface Goal {
   id: string;

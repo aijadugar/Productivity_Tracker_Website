@@ -8,18 +8,18 @@ import { Footer } from './components/footer/Footer';
 import { useFocusMode } from './hooks/useFocusMode';
 import { AnimatePresence } from 'framer-motion';
 
-// Lazy loaded components
+// Lazy-loaded components
 const RightSidebar = React.lazy(() => import('./components/RightSidebar'));
 const FAQ = React.lazy(() =>
   import('./components/faq/FAQ').then((module) => ({ default: module.FAQ }))
 );
 
-
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { focusMode, distractionFreeMode } = useFocusMode();
 
-  const toggleSidebar = () => setSidebarCollapsed(!sidebarCollapsed);
+  // Toggles the state of the sidebar
+  const toggleSidebar = () => setSidebarCollapsed((prev) => !prev);
 
   return (
     <TaskProvider>
@@ -49,7 +49,7 @@ function App() {
               {/* Content */}
               <main className="flex-1 p-4">
                 <Dashboard />
-                <Suspense fallback={<div>Loading FAQ...</div>}>
+                <Suspense fallback={<div className="text-center">Loading FAQ...</div>}>
                   <FAQ />
                 </Suspense>
               </main>
@@ -57,7 +57,7 @@ function App() {
 
             {/* Right Sidebar */}
             {!distractionFreeMode && (
-              <Suspense fallback={<div>Loading Right Sidebar...</div>}>
+              <Suspense fallback={<div className="text-center">Loading Right Sidebar...</div>}>
                 <RightSidebar aria-label="Additional information sidebar" />
               </Suspense>
             )}
